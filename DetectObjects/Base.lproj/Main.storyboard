@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="krZ-g2-iBz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5gR-CM-J9s">
+            <objects>
+                <viewController id="Xdx-tS-RCM" customClass="ViewController" customModule="DetectObjects" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Kz-yn-Uhy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select image" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUy-NT-MIG">
+                                <rect key="frame" x="20" y="112" width="374" height="32.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-JU-FQp">
+                                <rect key="frame" x="20" y="154.5" width="374" height="697.5"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CF5-zh-OMO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nfC-JU-FQp" firstAttribute="top" secondItem="HUy-NT-MIG" secondAttribute="bottom" constant="10" id="MDd-b6-xGx"/>
+                            <constraint firstItem="HUy-NT-MIG" firstAttribute="top" secondItem="CF5-zh-OMO" secondAttribute="top" constant="24" id="cQX-2f-jwq"/>
+                            <constraint firstItem="HUy-NT-MIG" firstAttribute="leading" secondItem="CF5-zh-OMO" secondAttribute="leading" constant="20" id="gC8-m8-bu3"/>
+                            <constraint firstItem="CF5-zh-OMO" firstAttribute="trailing" secondItem="nfC-JU-FQp" secondAttribute="trailing" constant="20" id="gh0-O6-jjv"/>
+                            <constraint firstItem="CF5-zh-OMO" firstAttribute="trailing" secondItem="HUy-NT-MIG" secondAttribute="trailing" constant="20" id="jFC-Df-mbt"/>
+                            <constraint firstItem="CF5-zh-OMO" firstAttribute="bottom" secondItem="nfC-JU-FQp" secondAttribute="bottom" constant="10" id="lMS-6s-O1o"/>
+                            <constraint firstItem="nfC-JU-FQp" firstAttribute="leading" secondItem="CF5-zh-OMO" secondAttribute="leading" constant="20" id="raL-HB-lJH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="a16-8K-Jm5">
+                        <barButtonItem key="rightBarButtonItem" image="camera.fill" catalog="system" id="t8b-zb-Dgi">
+                            <connections>
+                                <action selector="cameraTapped:" destination="Xdx-tS-RCM" id="MQA-l4-KvS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="nfC-JU-FQp" id="YFr-AX-NOu"/>
+                        <outlet property="label" destination="HUy-NT-MIG" id="fRk-e3-Fbu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KxF-AF-fw5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="35.491071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2rk-z5-7Ey">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="krZ-g2-iBz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rZW-5v-1Jk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xdx-tS-RCM" kind="relationship" relationship="rootViewController" id="Zfy-No-oa8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aH-We-ZxV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="placeholder" width="300" height="168"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
